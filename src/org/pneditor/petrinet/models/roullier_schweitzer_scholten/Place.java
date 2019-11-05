@@ -22,18 +22,19 @@ public class Place {
 		arcsOutput = new ArrayList<Arc>();
 	}
 	
+	public Place() {
+		this.token = 0;
+		arcsInput = new ArrayList<Arc>(); 
+		arcsOutput = new ArrayList<Arc>();
+	}
+	
 	/**
 	 * Adds the number of token to the place if it is positive. Else, it does nothing
 	 * @param number
 	 * @throws WrongInputException 
 	 */
-	public void addToken(int number) throws WrongInputException {
-		if (number >= 0) {
-			this.token += number;
-		}
-		else {
-			throw new WrongInputException();
-		}
+	public void addToken() {
+		this.token += 1;
 	}
 	
 	public int getToken() {
@@ -45,12 +46,9 @@ public class Place {
 	 * @param number
 	 * @throws WrongInputException
 	 */
-	public void delToken(int number) throws WrongInputException {
-		if (this.getToken()>=number) {
-			this.token -= number;
-		}
-		else {
-			throw new WrongInputException();
+	public void delToken(){
+		if (this.getToken()>=1) {
+			this.token -= 1;
 		}
 	}
 	
