@@ -59,7 +59,6 @@ public class Arc {
 		type = Type;
 		}
 	}
-	
 	public Place getPlace() {
 		return place;
 	}
