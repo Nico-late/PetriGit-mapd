@@ -25,20 +25,26 @@ public class AdapterPlace extends AbstractPlace{
 
 	@Override
 	public void removeToken() {
-		// TODO Auto-generated method stub
-		
-	}
+		try {
+			place.delToken(1);
+		} catch (WrongInputException e) {
+			e.printStackTrace();
+		}
+	}		
 
 	@Override
 	public int getTokens() {
-		// TODO Auto-generated method stub
-		return 0;
+		return place.getToken();
 	}
 
 	@Override
 	public void setTokens(int tokens) {
-		// TODO Auto-generated method stub
-		
+		try {
+			place.setToken(tokens);
+		} catch (WrongInputException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 		
 	}
 
 }
