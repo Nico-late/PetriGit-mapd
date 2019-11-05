@@ -3,6 +3,7 @@ package org.pneditor.petrinet.adapters.roullier_schweitzer_scholten;
 import org.pneditor.petrinet.AbstractPlace;
 
 import org.pneditor.petrinet.models.roullier_schweitzer_scholten.Place;
+import org.pneditor.petrinet.models.roullier_schweitzer_scholten.WrongInputException;
 
 public class AdapterPlace extends AbstractPlace{
 	
@@ -15,7 +16,11 @@ public class AdapterPlace extends AbstractPlace{
 
 	@Override
 	public void addToken() {
-		place.addToken();
+		try {
+			place.addToken(1);
+		} catch (WrongInputException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
