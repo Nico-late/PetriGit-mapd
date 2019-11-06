@@ -13,7 +13,7 @@ public class Arc {
 	// Arc type
 	// -1: Outgoing arc, from a transition to a place
 	// 0: Zero arc (always outgoing)
-	// 1: Incoming arc, from a transition to a place
+	// 1: Incoming arc, from a place to a transition
 	// 2: Empty Edges arc
 	private int type;
 	
@@ -83,9 +83,12 @@ public class Arc {
 	 * @throws WrongInputException
 	 */
 	public void setWeight(int weight) throws WrongInputException {
-		if (weight <= 0) {
+		if (weight < 0) {
 			throw new WrongInputException();
 
+		}
+		if (this.getType()==0) {
+			this.weight=0;
 		}
 		else if ((this.getType()==1) || (this.getType()==-1)) {
 			this.weight=weight;

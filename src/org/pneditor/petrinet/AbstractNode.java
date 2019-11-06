@@ -47,5 +47,6 @@ public abstract class AbstractNode {
     }
     
 	public abstract boolean isPlace();
+	
 
 }
