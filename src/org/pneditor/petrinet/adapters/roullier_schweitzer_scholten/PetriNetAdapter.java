@@ -16,9 +16,14 @@ public class PetriNetAdapter extends PetriNetInterface{
 	private int countPlaces=0;
 	private int countTransitions=0;
 
+	
 	public PetriNetAdapter() {
 		petriNet = new PetriNet();
 	}
+	
+	/**
+	 * This function add a place to the petrinet.
+	 */
 	@Override
 	public AbstractPlace addPlace() {
 		PlaceAdapter placeAdapter = new PlaceAdapter("Place " + countPlaces);
@@ -26,6 +31,9 @@ public class PetriNetAdapter extends PetriNetInterface{
 		petriNet.addPlace(placeAdapter.getPlace());
 		return placeAdapter;
 	}
+	/**
+	 * This function add a transition to the petrinet.
+	 */
 
 	@Override
 	public AbstractTransition addTransition() {
@@ -35,6 +43,9 @@ public class PetriNetAdapter extends PetriNetInterface{
 		return transitionAdapter;
 	}
 
+	/**
+	 * This function add a regular arc to the petrinet. User just have to specify a source and a destination.
+	 */	
 	@Override
 	public AbstractArc addRegularArc(AbstractNode source, AbstractNode destination) throws UnimplementedCaseException {
 		ArcAdapter arcAdapter = new ArcAdapter(source, destination, "regular");
@@ -42,6 +53,9 @@ public class PetriNetAdapter extends PetriNetInterface{
 		return arcAdapter;
 	}
 
+	/**
+	 * This function add a inhibitory arc to the petrinet. User just have to specify a source and a destination.
+	 */	
 	@Override
 	public AbstractArc addInhibitoryArc(AbstractPlace place, AbstractTransition transition)
 			throws UnimplementedCaseException {
@@ -50,6 +64,9 @@ public class PetriNetAdapter extends PetriNetInterface{
 		return arcAdapter;
 	}
 
+	/**
+	 * This function add a reset arc to the petrinet. User just have to specify a source and a destination.
+	 */	
 	@Override
 	public AbstractArc addResetArc(AbstractPlace place, AbstractTransition transition)
 			throws UnimplementedCaseException {
@@ -58,30 +75,46 @@ public class PetriNetAdapter extends PetriNetInterface{
 		return arcAdapter;
 	}
 
+	/**
+	 * It is the adapter of delPlace. It deletes a place in the petrinet.
+	 */	
 	@Override
 	public void removePlace(AbstractPlace place) {
 		PlaceAdapter placeAdapter = (PlaceAdapter) place; 
 		petriNet.delPlace(placeAdapter.getPlace());
 	}
 
+	/**
+	 * It is the adapter of delTransition. It deletes a transition in the petrinet.
+	 */	
 	@Override
 	public void removeTransition(AbstractTransition transition) {
 		TransitionAdapter transitionAdapter = (TransitionAdapter) transition; 
 		petriNet.delTransition(transitionAdapter.getTransition());		
 	}
 
+	/**
+	 * It is the adapter of delArc. It deletes an arc in the petrinet.
+	 */	
 	@Override
 	public void removeArc(AbstractArc arc) {
 		ArcAdapter arcAdapter = (ArcAdapter) arc; 
 		petriNet.delArc(arcAdapter.getArc());				
 	}
 
+	/**
+	 * It is the adapter of fireable in the class called Transition. It check if the transition is fireable,
+	 * returns true if it is and false if it's not.
+	 */	
 	@Override
 	public boolean isEnabled(AbstractTransition transition) throws ResetArcMultiplicityException {
 		TransitionAdapter transitionAdapter = (TransitionAdapter) transition; 
 		return transitionAdapter.getTransition().fireable();
 	}
 
+	/**
+	 * It is the adapter of fire in the class called Transition. It fires/activates a transition.
+	 */	
 	@Override
 	public void fire(AbstractTransition transition) throws ResetArcMultiplicityException {
 		TransitionAdapter transitionAdapter = (TransitionAdapter) transition; 

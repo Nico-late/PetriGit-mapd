@@ -9,11 +9,18 @@ public class PlaceAdapter extends AbstractPlace{
 	
 	private Place place;
 
+	/**
+	 * Adapter of Place's constructor
+	 * @param label
+	 */
 	public PlaceAdapter(String label) {
 		super(label);
 		place = new Place();
 	}
 
+	/**
+	 * It adapts addToken method. Already described in Place.
+	 */
 	@Override
 	public void addToken() {
 		try {
@@ -23,6 +30,9 @@ public class PlaceAdapter extends AbstractPlace{
 		}
 	}
 
+	/**
+	 * It adapts delToken method. Already described in Place.
+	 */
 	@Override
 	public void removeToken() {
 		try {
@@ -32,11 +42,15 @@ public class PlaceAdapter extends AbstractPlace{
 		}
 	}		
 
+
 	@Override
 	public int getTokens() {
 		return place.getToken();
 	}
 
+	/**
+	 * It adapts setToken method. Already described in Place.
+	 */
 	@Override
 	public void setTokens(int tokens) {
 		try {
