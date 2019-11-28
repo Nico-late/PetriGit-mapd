@@ -113,7 +113,7 @@ public class PetriNetAdapter extends PetriNetInterface{
 	}
 
 	/**
-	 * It is the adapter of fire in the class called Transition. It fires/activates a transition.
+	 * It is the adapter of fire in the class called Transition. It fires a transition.
 	 */	
 	@Override
 	public void fire(AbstractTransition transition) throws ResetArcMultiplicityException {

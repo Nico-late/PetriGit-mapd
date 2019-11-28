@@ -42,7 +42,9 @@ public class PlaceAdapter extends AbstractPlace{
 		}
 	}		
 
-
+	/** 
+	 * The function retrieves the number of token of a place.
+	 */
 	@Override
 	public int getTokens() {
 		return place.getToken();

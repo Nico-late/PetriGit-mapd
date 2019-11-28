@@ -7,8 +7,9 @@ public class TransitionAdapter extends AbstractTransition{
 
 	private Transition transition;
 	
-	/**This function adapt the constructor of transition.
-	 *Other Transition's methods are adapted in the PetriNetAdapter excluding getTransition
+	/**
+	 * This function adapts the constructor of transition.
+	 * Other Transition's methods are adapted in the PetriNetAdapter excluding getTransition
 	 * that is adapted just after.
 	 * @param label
 	 */
@@ -17,7 +18,10 @@ public class TransitionAdapter extends AbstractTransition{
 		transition = new Transition();
 	}
 	
-	
+	/**
+	 * This function retrieves the transition from the model.
+	 * @return
+	 */
 	public Transition getTransition() {
 		return this.transition;
 	}
