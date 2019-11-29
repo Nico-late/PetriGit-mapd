@@ -18,3 +18,6 @@ Dates :
 -5/11 Ajout du modèle, d'AdapterTransition, AdapterPlace, AdapterArc et AdapterPetriNet
 -6/11 Completion d'AdapterTransition, AdapterPlace, AdapterArc et AdapterPetriNet
 -27/11 Ajout des commentaires
+
+ Nous avons globalement bien apprécié le projet, car il nous laissait une certaine liberté dans la conception, 
+ et nous proposait un résultat concret et graphique de notre travail.
