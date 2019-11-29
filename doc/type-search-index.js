@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"org.pneditor.petrinet.adapters.roullier_schweitzer_scholten","l":"PetriNetAdapter"}]
